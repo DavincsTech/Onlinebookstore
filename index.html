@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="./images/logoo.png" type="image/png" />
+  <title>Online Book Store</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#loginModal">Login</a></li>
+      <li><a href="#catalogue">Catalogue</a></li>
+      <li><a href="#registerModal">Register</a></li>
+    </ul>
+  </nav>
+  <div class="home-container" id="home">
+    <div class="frame left-frame">
+      <img src="./images/featured-book.jpg" alt="Featured Books" />
+      <h2>Featured Books</h2>
+      <p>Discover our latest arrivals and bestsellers.</p>
+    </div>
+    <div class="frame middle-frame">
+      <img src="./images/special-offer.jpg" alt="Special Offers" />
+      <h2>Special Offers</h2>
+      <p>Get exclusive discounts on selected titles.</p>
+    </div>
+    <div class="frame right-frame">
+      <img src="./images/categories.jpg" alt="Categories" />
+      <h2>Categories</h2>
+      <p>Explore books by genre: Fiction, Non-Fiction, Sci-Fi, and more.</p>
+    </div>
+  </div>
+
+  <section id="catalogue" class="catalogue-section">
+    <h2>Catalogue</h2>
+    <div class="book-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Cover</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="./images/book-cover.jpeg" alt="Book 1 Cover" /></td>
+            <td>The Great Gatsby</td>
+            <td>F. Scott Fitzgerald</td>
+            <td>$10.99</td>
+            <td>In Stock</td>
+          </tr>
+          <tr>
+            <td><img src="./images/book-cover2.jpeg" alt="Book 2 Cover" /></td>
+            <td>1984</td>
+            <td>George Orwell</td>
+            <td>$12.50</td>
+            <td>In Stock</td>
+          </tr>
+          <tr>
+            <td><img src="./images/book-cover3.jpeg" alt="Book 3 Cover" /></td>
+            <td>To Kill a Mockingbird</td>
+            <td>Harper Lee</td>
+            <td>$9.99</td>
+            <td>In Stock</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="this.parentElement.parentElement.style.display='none'">&times;</span>
+      <div class="login-card">
+        <img src="./images/logoo.png" alt="Logo" class="card-logo" />
+        <h2>Login</h2>
+        <form action="login.php" method="POST">
+          <label for="login-username">Username or Email</label>
+          <input type="text" id="login-username" name="username" placeholder="Enter your username or email" required />
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" name="password" placeholder="Enter your password" required />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="this.parentElement.parentElement.style.display='none'">&times;</span>
+      <div class="register-card">
+        <img src="./images/logoo.png" alt="Logo" class="card-logo" />
+        <h2>Register</h2>
+        <form action="register.php" method="POST">
+          <label for="register-name">Full Name</label>
+          <input type="text" id="register-name" name="fullname" placeholder="Enter your full name" required />
+          <label for="register-email">Email</label>
+          <input type="email" id="register-email" name="email" placeholder="Enter your email" required />
+          <label for="register-password">Password</label>
+          <input type="password" id="register-password" name="password" placeholder="Create a password" required />
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
