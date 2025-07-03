@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Bookstore</title>
+</head>
+<body>
+  <h2>Login</h2>
+  <form id="loginForm">
+    <input type="email" name="email" required placeholder="Email" /><br />
+    <input type="password" name="password" required placeholder="Password" /><br />
+    <button type="submit">Login</button>
+  </form>
+
+  <script>
+    document.getElementById('loginForm').onsubmit = async function (e) {
+      e.preventDefault();
+      const form = new FormData(this);
+      const res = await fetch('login.php', {
+        method: 'POST',
+        body: form
+      });
+      const text = await res.text();
+      console.log('Login Response:', text);
+      if (text.trim() !== 'Invalid credentials' && text.trim() !== 'error') {
+      localStorage.setItem("user", text.trim());
+        window.location.href = 'welcome.html';
+      } else {
+        alert(text);
+      }
+    };
+  </script>
+</body>
+</html>

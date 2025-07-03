@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to Davincs Bookstore</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px 40px;
+    }
+    h1, h2 {
+      margin: 0;
+    }
+    main {
+      padding: 30px 40px;
+    }
+    section {
+      margin-top: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    button {
+      background: #f44336;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      border-radius: 4px;
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 id="welcomeText">Welcome!</h1>
+    <p>Your personal gateway to knowledge and stories.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>📚 About Davincs Bookstore</h2>
+      <p>
+        Davincs Bookstore is your ultimate destination for all kinds of books – from timeless classics
+        to modern bestsellers. Whether you're into fiction, non-fiction, sci-fi, or self-help, we have it all.
+      </p>
+    </section>
+
+    <section>
+      <h2>🔥 Why Choose Us?</h2>
+      <ul>
+        <li>Curated Catalogue of Top Books</li>
+        <li>Exciting Discounts & Offers</li>
+        <li>Easy Online Ordering</li>
+        <li>Secure Checkout</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🎉 New Arrivals & Bestsellers</h2>
+      <p>Don't miss out! Explore the latest hits in the <a href="index.html#catalogue">catalogue section</a>.</p>
+    </section>
+
+    <button onclick="logout()">Logout</button>
+  </main>
+
+  <footer>
+    <p>Powered by Davincs Tech © 2025</p>
+  </footer>
+
+  <script>
+    const username = localStorage.getItem("user");
+    if (!username) {
+      window.location.href = "login.html";
+    } else {
+      document.getElementById("welcomeText").textContent = `Welcome, ${username}!`;
+    }
+
+    function logout() {
+      localStorage.removeItem("user");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
